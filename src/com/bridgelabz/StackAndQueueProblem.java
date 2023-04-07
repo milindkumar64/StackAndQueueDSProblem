@@ -2,27 +2,12 @@ package com.bridgelabz;
 
 import java.util.LinkedList;
 
-class Stack {
+class Queue {
 	private LinkedList linkedlist = new LinkedList();
 
-	public void push(Object obj) {
+	public void enqueu(Object obj) {
 
-		linkedlist.addFirst(obj);
-	}
-
-	public Object peak() {
-		return linkedlist.getFirst();
-	}
-
-	public Object pop() {
-		return linkedlist.removeFirst();
-	}
-
-	public boolean isEmpty() {
-		if (linkedlist.isEmpty()) {
-			return true;
-		}
-		return false;
+		linkedlist.addLast(obj);
 	}
 
 	public String toString() {
@@ -30,25 +15,17 @@ class Stack {
 
 	}
 }
-
 public class StackAndQueueProblem {
 
 	public static void main(String[] args) {
 
-		Stack stack = new Stack();
+		Queue queue = new Queue();
 
-		stack.push(70);
-		stack.push(30);
-		stack.push(56);
+		queue.enqueu(56);
+		queue.enqueu(30);
+		queue.enqueu(70);
 
-		System.out.println(stack);
-
-		while (!stack.isEmpty()) {
-			System.out.println("Now Peak is at :"+stack.peak());
-			System.out.println(stack.pop()+" is removed ");
-		}
-		System.out.println("Stack is empty : "+stack);
+		System.out.println(queue);
 
 	}
-
 }
